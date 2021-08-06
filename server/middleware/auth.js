@@ -6,7 +6,7 @@ const verifyToken = (req, res, next) => {
 
     if (!token)
 		return res
-			.status(401)
+			.status(200)
 			.json({ success: false, message: 'Access token not found' })
             try {
                 const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
